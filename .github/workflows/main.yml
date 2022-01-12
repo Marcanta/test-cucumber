@@ -1,0 +1,27 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI / Tests / dev
+concurrency: ci-dev-tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - run: npm install
+      
+      - name: Run cucumber tests
+        run: npm test 
