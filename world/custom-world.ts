@@ -1,4 +1,5 @@
-import { SimpleMathsCalculator } from '../domains/simple-maths/simple-maths-calculator';
+import { CreditCard } from '../domains/gas-station/payment-card';
+import { ATM } from '../domains/gas-station/paymemt-machine';
 import { setWorldConstructor } from '@cucumber/cucumber';
 import { Stream } from 'stream';
 
@@ -24,7 +25,8 @@ export interface CucumberWorldConstructorParams {
 
 export class CustomWorld {
   public attach: AttachFn;
-  public calculator: SimpleMathsCalculator = new SimpleMathsCalculator();
+  public card?: CreditCard;
+  public atm: ATM = new ATM();
   public foo = false;
   public debug = false;
 
