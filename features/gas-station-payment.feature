@@ -25,4 +25,4 @@ Scénario: Essayer de prendre de l'essence avec un code correct et un solde > 12
   Etant donné que j'ai inséré ma carte bancaire
   Et que j'ai saisi le code
   Quand j'appuie sur valider
-  Alors la machine me demande "Voulez-vous un facture"
+  Alors la machine me demande "Voulez-vous une facture"
