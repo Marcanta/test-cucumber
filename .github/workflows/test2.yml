@@ -21,5 +21,9 @@ jobs:
         with:
           name: test-artifact
           path: .
+      
+      - run: openssl enc -aes-256-cbc -nosalt -d \                                                                                                ✔  3.0.0   03:54:43 PM  
+              -in file.enc -out test.json \
+              -K '2222233333232323' -iv '5a04ec902686fb05a6b7a338b6e07760'
           
       - run: cat test.json
