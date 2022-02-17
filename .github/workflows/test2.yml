@@ -22,4 +22,4 @@ jobs:
           name: test-artifact
           path: .
           
-      - run: ls
+      - run: cat test.json
