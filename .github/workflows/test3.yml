@@ -1,0 +1,20 @@
+
+name: test env
+
+on:
+  workflow_call:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: actions/download-artifact@v2
+        with:
+          name: test-artifact
+          path: .
+          
+      - run: openssl enc -aes-256-cbc -nosalt -d -in file.enc -out test.json -K '2222233333232323' -iv '5a04ec902686fb05a6b7a338b6e07760'
+      
+      - run: cat test.json
