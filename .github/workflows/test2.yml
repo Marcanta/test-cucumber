@@ -9,11 +9,12 @@ jobs:
     uses: ./.github/workflows/test.yml
   
   test2:
+    needs: [test]
     uses: ./.github/workflows/test3.yml
     
   format:
     runs-on: ubuntu-latest
-    needs: [test]
+    needs: [test2]
     steps:
       - uses: actions/checkout@v2
       
