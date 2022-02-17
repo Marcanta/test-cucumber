@@ -16,3 +16,10 @@ jobs:
       
       - run: echo "${{ env.action_state }}" # This will output 'yellow'
       - run: echo "${{ needs.test.outputs.args }}"
+      
+      - uses: actions/download-artifact@v2
+        with:
+          name: test-artifact
+          path: test.json
+          
+      - run: cat test.json
