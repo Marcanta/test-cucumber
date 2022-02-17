@@ -1,0 +1,17 @@
+name: Format Vault secrets to args and env
+
+on:
+  push:
+    branches: [ main ]
+    
+jobs:
+  test:
+    uses: tabuleo/actions/.github/workflows/vault_to_args.yml@main
+    
+  format:
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
+      - uses: actions/checkout@v2
+      
+      - run: echo "${{ needs.test.outputs.args }}"
