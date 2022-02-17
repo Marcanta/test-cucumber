@@ -6,7 +6,7 @@ on:
     
 jobs:
   test:
-    uses: tabuleo/actions/.github/workflows/vault_to_args.yml@main
+    uses: ./.github/workflows/test.yml
     
   format:
     runs-on: ubuntu-latest
