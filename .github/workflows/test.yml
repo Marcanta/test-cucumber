@@ -7,7 +7,7 @@ on:
   
 env: 
   URL: "https://google.com?test=3423&tutu=ewrwmec
-  
+
 jobs:
   test:
     runs-on: ubuntu-latest
