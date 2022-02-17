@@ -15,6 +15,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      
+      - run: echo $JSON
+        env:
+          JSON: ${{ toJSON(env) }}
+          
       - run: echo "${{toJSON(env)}}" > test.json
       
       - run: cat test.json
