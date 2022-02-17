@@ -22,6 +22,8 @@ jobs:
         env:
           JSON: ${{ toJSON(env) }}
           
+      - run: jq
+          
       - run: cat test2.json
       
       - run: echo "${{toJSON(env)}}" > test.json
