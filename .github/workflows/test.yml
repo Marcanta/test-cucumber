@@ -4,6 +4,10 @@ name: test env
 on:
   push:
     branches: [ main ]
+  workflow_call:
+   outputs:
+      args:
+        value: ${{ jobs.format.outputs.output1 }}
   workflow_dispatch:
   
 env: 
@@ -14,7 +18,8 @@ env:
 jobs:
   test:
     runs-on: ubuntu-latest
-
+    outputs:
+      output1: ${{ steps.return.outputs.args }}
     steps:
       - uses: actions/checkout@v2
       
@@ -25,3 +30,7 @@ jobs:
       - run: echo "${{toJSON(env)}}" > test.json
       
       - run: cat test.json
+      
+      - name: Return env
+        id: return
+        run: echo "::set-output name=args::$(cat test.json | base64)"
