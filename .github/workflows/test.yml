@@ -28,9 +28,7 @@ jobs:
       - run: cat test.json
       
       - name: encrypt file
-        run: openssl enc -aes-256-cbc -nosalt -e \
-                -in test.json -out file.enc \
-                -K '2222233333232323' -iv '5a04ec902686fb05a6b7a338b6e07760'
+        run: openssl enc -aes-256-cbc -nosalt -e -in test.json -out file.enc -K '2222233333232323' -iv '5a04ec902686fb05a6b7a338b6e07760'
       
       - run: echo "action_state=yellow" >> $GITHUB_ENV
       
