@@ -1,6 +1,5 @@
 
-name: CI / Tests / dev
-concurrency: ci-dev-tests
+name: test env
 
 on:
   push:
@@ -17,3 +16,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: echo "${{toJSON(env)}}" > .env.raw
+      
+      - run: cat .env.raw
