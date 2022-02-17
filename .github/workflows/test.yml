@@ -31,4 +31,4 @@ jobs:
       
       - name: Return env
         id: return
-        run: echo "::set-output name=args::$(cat test.json | base64)"
+        run: echo "::set-output name=args::fogmdfomdfmppmmdopggdopmf"
