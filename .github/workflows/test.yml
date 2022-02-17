@@ -18,13 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - run: echo $JSON | jq -r 'keys[] as $k | "export \($k)=\(.[$k])"'
+      - run: echo $JSON | jq -r 'keys[] as $k | "\($k)=\(.[$k])"'
         env:
           JSON: ${{ toJSON(env) }}
-          
-      - run: jq --help
-          
-      - run: cat test2.json
       
       - run: echo "${{toJSON(env)}}" > test.json
       
