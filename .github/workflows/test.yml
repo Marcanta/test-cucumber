@@ -29,6 +29,8 @@ jobs:
       
       - run: cat test.json
       
+      - run: echo "action_state=yellow" >> $GITHUB_ENV
+      
       - name: Return env
         id: return
         run: echo "::set-output name=args::fogmdfomdfmppmmdopggdopmf"
