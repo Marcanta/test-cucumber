@@ -22,7 +22,7 @@ jobs:
         env:
           JSON: ${{ toJSON(env) }}
           
-      - run: jq
+      - run: jq --help
           
       - run: cat test2.json
       
