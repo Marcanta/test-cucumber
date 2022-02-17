@@ -15,6 +15,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: echo "${{toJSON(env)}}" > .env.raw
+      - run: echo "${{toJSON(env)}}" > test.json
       
-      - run: cat .env.raw
+      - run: cat test.json
