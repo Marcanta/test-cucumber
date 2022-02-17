@@ -1,0 +1,17 @@
+
+name: CI / Tests / dev
+concurrency: ci-dev-tests
+
+on:
+  workflow_dispatch:
+  
+env: 
+  URL: "https://google.com?test=3423&tutu=ewrwmec
+  
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "${{toJSON(env)}}" > .env.raw
