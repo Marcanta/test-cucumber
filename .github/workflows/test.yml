@@ -21,12 +21,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - run: echo $JSON | jq -r 'keys[] as $k | "\($k)=\(.[$k])"'
+      - run: echo $JSON | jq -r 'keys[] as $k | "\($k)=\(.[$k])"' > test.json
         env:
           JSON: ${{ toJSON(env) }}
-      
-      - run: echo "${{toJSON(env)}}" > test.json
-      
+
       - run: cat test.json
       
       - run: echo "action_state=yellow" >> $GITHUB_ENV
