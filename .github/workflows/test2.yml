@@ -20,6 +20,6 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: test-artifact
-          path: test.json
+          path: .
           
-      - run: cat test.json
+      - run: ls
