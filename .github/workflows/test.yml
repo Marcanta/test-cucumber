@@ -31,6 +31,11 @@ jobs:
       
       - run: echo "action_state=yellow" >> $GITHUB_ENV
       
+      - uses: actions/upload-artifact@v2
+        with:
+          name: test-artifact
+          path: test.json
+          
       - name: Return env
         id: return
         run: echo "::set-output name=args::fogmdfomdfmppmmdopggdopmf"
